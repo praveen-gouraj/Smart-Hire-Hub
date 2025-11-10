@@ -86,7 +86,7 @@ const JobDetails = () => {
           {/* CTA */}
           {(!user || user.role === "Job Seeker") && (
             <div className="apply_row">
-              <Link to={`/application/${job._id}`} className="btn_primary">Apply now</Link>
+              <Link to={`/application/${job._id}`} className="apply_btn_outline">Apply now</Link>
             </div>
           )}
         </div>

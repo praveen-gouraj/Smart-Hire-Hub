@@ -9,7 +9,7 @@ export default function EmptyState({ title, subtitle, actionLabel, onAction }) {
       {subtitle && <p className="empty_state_subtitle">{subtitle}</p>}
       {actionLabel && (
         <div className="empty_state_action">
-          <Button onClick={onAction} className="btn_primary">{actionLabel}</Button>
+          <Button onClick={onAction} variant="outline" className="rounded-full">{actionLabel}</Button>
         </div>
       )}
     </div>

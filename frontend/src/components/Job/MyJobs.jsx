@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { MapPin, DollarSign, FileText, Pencil, Trash2, Check, CheckCircle } from "lucide-react";
+import { MapPin, DollarSign, FileText, Pencil, Trash2, Check } from "lucide-react";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
 import { JOB_CATEGORIES } from "../../constants/jobCategories";
+import Button from "../ui/Button";
 
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);
@@ -258,37 +259,45 @@ const MyJobs = () => {
                     <div className="left">
                       {isEditing ? (
                         <div className="flex gap-2 order-1">
-                          <button
+                          <Button
                             onClick={() => handleUpdateJob(job._id)}
-                            className="btn_primary"
+                            variant="outline"
+                            size="md"
+                            className="rounded-full"
                           >
                             <Check size={14} /> Save
-                          </button>
-                          <button
+                          </Button>
+                          <Button
                             onClick={handleDisableEdit}
-                            className="btn_secondary"
+                            variant="outline"
+                            size="md"
+                            className="rounded-full"
                           >
                             Cancel
-                          </button>
+                          </Button>
                         </div>
                       ) : (
-                        <button
+                        <Button
                           onClick={() => handleEnableEdit(job._id)}
-                          className="btn_info"
+                          variant="outline"
+                          size="md"
+                          className="rounded-full"
                           aria-label="Edit job"
                         >
                           <Pencil size={14} /> Edit
-                        </button>
+                        </Button>
                       )}
                     </div>
                     <div className="right">
-                      <button
+                      <Button
                         onClick={() => handleDeleteJob(job._id)}
-                        className="btn_danger"
+                        variant="outline"
+                        size="md"
+                        className="rounded-full"
                         aria-label="Delete job"
                       >
                         <Trash2 size={14} /> Delete
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>

@@ -426,10 +426,13 @@ button:focus { outline: 2px solid var(--brand-2); outline-offset: 2px; }
 .resume_preview img { width:100%; height:180px; object-fit: cover; display:block; }
 
 .app_actions { display:flex; flex-wrap:wrap; gap:12px; margin-top: 10px; }
-.btn_primary { border:none; border-radius:999px; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); color:#fff; padding: 12px 18px; font-weight:700; box-shadow: var(--shadow-sm); }
-.btn_info { border:none; border-radius:999px; background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%); color:#fff; padding: 12px 18px; font-weight:700; box-shadow: var(--shadow-sm); }
-.btn_danger { border:none; border-radius:999px; background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%); color:#fff; padding: 12px 18px; font-weight:700; box-shadow: var(--shadow-sm); }
-.btn_primary:hover, .btn_info:hover, .btn_danger:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+/* Deprecated gradient button styles (replaced by unified outline variant) */
+.btn_primary, .btn_info, .btn_danger, .btn_success, .btn_warning { all:unset; }
+/* Unified application action buttons */
+.app_actions button { background:#fff; border:1px solid #e2e8f0; color:#0f172a; padding:10px 18px; font-size:14px; font-weight:600; border-radius:999px; line-height:1.1; box-shadow:0 1px 2px rgba(0,0,0,0.04); }
+.app_actions button:hover { background:#f1f5f9; border-color:#cbd5e1; }
+.app_actions button:active { background:#e2e8f0; }
+.app_actions button:disabled { opacity:.55; cursor:not-allowed; }
 
 .heroSection {
   display: flex;
@@ -929,7 +932,9 @@ button:focus { outline: 2px solid var(--brand-2); outline-offset: 2px; }
 .detail_section_body { font-size:15px; line-height:1.55; color:#334155; white-space:pre-wrap; }
 
 .apply_row { margin-top:4px; display:flex; justify-content:flex-start; }
-.apply_row .btn_primary { text-decoration:none; font-size:15px; font-weight:600; padding:14px 28px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; }
+.apply_row .apply_btn_outline { text-decoration:none; font-size:15px; font-weight:600; padding:14px 28px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid #e2e8f0; color:#0f172a; box-shadow:0 1px 2px rgba(0,0,0,0.04); transition:background .15s ease, border-color .15s ease; }
+.apply_row .apply_btn_outline:hover { background:#f1f5f9; border-color:#cbd5e1; }
+.apply_row .apply_btn_outline:active { background:#e2e8f0; }
 
 @media (max-width:1100px){ .job_head .job_title { font-size:34px; } .job_detail_card { padding:36px 34px 42px; } }
 @media (max-width:700px){ .job_head .job_title { font-size:30px; } .job_detail_card { padding:30px 26px 38px; } .detail_grid { grid-template-columns:1fr; } }
@@ -1238,10 +1243,8 @@ button:focus { outline: 2px solid var(--brand-2); outline-offset: 2px; }
 .badge_status.application_status.rejected { background:#fef2f2; color:#b91c1c; border-color:#fecaca; }
 
 /* Button color helpers for employer actions */
-.btn_success { background: #10b981; color: white; }
-.btn_success:hover { background: #059669; }
-.btn_warning { background: #f59e0b; color: white; }
-.btn_warning:hover { background: #d97706; }
+/* Remove old success/warning solid styles in favor of neutral outline */
+.btn_success, .btn_warning { all:unset; }
 .job_title { font-size:22px; font-weight:700; line-height:1.15; margin:0; color: var(--text); }
 .job_meta { margin-top:6px; display:flex; flex-wrap:wrap; gap:10px; font-size:11px; text-transform:uppercase; font-weight:600; letter-spacing:.05em; }
 .job_meta .company_chip { background:rgba(20,184,166,0.12); color:var(--brand); padding:4px 10px; border-radius:999px; border:1px solid rgba(20,184,166,0.25); font-size:11px; }
