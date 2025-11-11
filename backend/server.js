@@ -1,7 +1,7 @@
 import app from "./app.js";
-import cloudinary from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 
-cloudinary.v2.config({
+cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
   api_key: process.env.CLOUDINARY_CLIENT_API,
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,

@@ -1,4 +1,4 @@
-# JobPortal
+# Smart Hire-Hub
 
 Full-stack Job Portal application (React + Vite frontend, Node/Express backend, MongoDB). This repository contains a simple job board with user authentication, job posting, and application submission with resume upload.
 
@@ -21,9 +21,9 @@ Prerequisites:
 
 ```powershell
 cd backend
-copy .env.example .env
-# edit .env and set MONGO_URI and Cloudinary/JWT values
-notepad .env
+copy .\config\config.env.example .\config\config.env
+# edit config/config.env and set MONGO_URI and Cloudinary/JWT values
+notepad .\config\config.env
 ```
 
 3. Install and run backend (development)
@@ -43,9 +43,10 @@ npm run dev
 # open http://localhost:5173
 ```
 
-Notes:
-- Backend server listens on `PORT` from the env (default `4000`).
-- Cloudinary config is read from env variables (see `backend/.env.example`).
+ Notes:
+ - Backend server listens on `PORT` from the env (default `4000`).
+ - Cloudinary config is read from env variables (see `backend/config/config.env.example`).
+ - Resume uploads now support PDF, PNG, JPEG, and WEBP. PDFs are recommended.
 
 ## CI (GitHub Actions)
 

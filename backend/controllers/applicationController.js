@@ -2,7 +2,7 @@ import { catchAsyncErrors } from "../middlewares/catchAsyncError.js";
 import ErrorHandler from "../middlewares/error.js";
 import { Application } from "../models/applicationSchema.js";
 import { Job } from "../models/jobSchema.js";
-import cloudinary from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 
 export const postApplication = catchAsyncErrors(async (req, res, next) => {
   const { role } = req.user;
@@ -16,14 +16,26 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
   }
 
   const { resume } = req.files;
-  const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
+  const allowedFormats = [
+    "application/pdf",
+    "image/png",
+    "image/jpeg",
+    "image/webp",
+  ];
   if (!allowedFormats.includes(resume.mimetype)) {
     return next(
-      new ErrorHandler("Invalid file type. Please upload a PNG file.", 400)
+      new ErrorHandler(
+        "Invalid file type. Please upload a PDF, PNG, JPEG, or WEBP.",
+        400
+      )
     );
   }
   const cloudinaryResponse = await cloudinary.uploader.upload(
-    resume.tempFilePath
+    resume.tempFilePath,
+    {
+      resource_type: "auto", // allow non-image like PDF
+      folder: "resumes",
+    }
   );
 
   if (!cloudinaryResponse || cloudinaryResponse.error) {

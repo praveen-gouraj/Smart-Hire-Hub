@@ -1,0 +1,45 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/.vite/
+backend/coverage/
+coverage/
+
+# Environment files (keep examples, ignore real secrets)
+.env
+.env.*
+backend/.env
+backend/config/config.env
+backend/config/config.local.env
+frontend/.env
+frontend/.env.*
+
+# Local files
+*.local
+
+# App data
+tmp/
+*.tmp
+
+# Public uploads (keep folder only)
+frontend/public/CVs/*
+!frontend/public/CVs/.gitkeep

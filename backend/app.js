@@ -4,7 +4,6 @@ import jobRouter from "./routes/jobRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import applicationRouter from "./routes/applicationRoutes.js";
 import profileRouter from "./routes/profileRoutes.js";
-import { config } from "dotenv";
 import cors from "cors";
 import { errorMiddleware } from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
