@@ -39,7 +39,6 @@ Create `backend/config/config.env` (see example):
 - frontend: `npm run dev`, `npm run build`, `npm run lint`
 
 ## Notes
-- Resumes: PDF, PNG, JPEG, WEBP (Cloudinary folder: resumes/).
 - API base: http://localhost:4000 (see routes under `/api/v1/*`).
 
 ## CI
