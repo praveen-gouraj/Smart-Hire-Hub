@@ -9,7 +9,7 @@ const JobDetails = () => {
   const [job, setJob] = useState({});
   const navigateTo = useNavigate();
 
-  const { isAuthorized, user } = useContext(Context);
+  const { user } = useContext(Context);
 
   useEffect(() => {
     axios
@@ -19,10 +19,11 @@ const JobDetails = () => {
       .then((res) => {
         setJob(res.data.job);
       })
-      .catch((error) => {
+      .catch(() => {
         navigateTo("/notfound");
       });
-  }, []);
+    // include dependencies so lint is satisfied
+  }, [id, navigateTo]);
 
   const postedOn = useMemo(() => {
     try {

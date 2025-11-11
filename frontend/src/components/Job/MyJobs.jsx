@@ -74,14 +74,14 @@ const MyJobs = () => {
     <section className="myJobs page">
       <div className="container">
         <h1>Your posted jobs</h1>
-        <p className="lead">Manage and refine the roles you've published. Switch to edit mode to adjust details.</p>
+  <p className="lead">Manage and refine the roles you have published. Switch to edit mode to adjust details.</p>
 
         {myJobs.length === 0 && (
-          <div className="empty-state mt-6">You haven't posted any jobs yet.</div>
+          <div className="empty-state mt-6">You have not posted any jobs yet.</div>
         )}
 
         <div className="job_admin_grid mt-4">
-          {myJobs.map((job, idx) => {
+          {myJobs.map((job, _idx) => {
             const isEditing = editingId === job._id;
             const expired = Boolean(job.expired);
             const salaryText = job.fixedSalary

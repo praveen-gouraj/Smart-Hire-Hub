@@ -3,7 +3,7 @@ import { Context } from "../../main";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { FiMail, FiPhone, FiMapPin, FiFileText } from "react-icons/fi";
+import { FiPhone, FiMapPin, FiFileText } from "react-icons/fi";
 import ResumeModal from "./ResumeModal";
 import EmptyState from "../ui/EmptyState";
 import Button from "../ui/Button";
@@ -217,11 +217,11 @@ const MyApplications = () => {
           </h1>
           {isJobSeeker ? (
             <p className="text-slate-600 max-w-2xl">
-              Track the jobs you've applied to. You can withdraw if you change your mind.
+                Track the jobs you have applied to. You can withdraw if you change your mind.
             </p>
           ) : (
             <p className="text-slate-600 max-w-3xl">
-              Review and manage incoming candidate submissions. Open a resume to inspect details or remove an application you no longer need.
+                Review and manage incoming candidate submissions. Open a resume to inspect details or remove an application you no longer need.
             </p>
           )}
         </header>

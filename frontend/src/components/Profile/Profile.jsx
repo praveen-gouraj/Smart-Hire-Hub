@@ -102,6 +102,7 @@ const Profile = () => {
   return (
   <section className="profileSection page" style={{paddingTop:'0px', paddingBottom:'60px'}}>
       <div className="container" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'30px'}}>
+        {loading && <p className="text-slate-500" role="status">Loading profile…</p>}
         <div style={{textAlign:'center', maxWidth:'900px'}} className="fade-in-up">
           <h3 style={{fontSize:'2.2rem', fontWeight:700, color:'var(--text)', letterSpacing:'-0.5px'}}>{headerName}</h3>
           <p style={{marginTop:'10px', color:'var(--muted)', fontSize:'1.05rem'}}>Create your job-seeker profile to auto-fill applications.</p>
