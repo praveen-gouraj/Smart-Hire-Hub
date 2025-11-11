@@ -7,7 +7,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js",
-    "backfill:company": "node ./scripts/backfillCompanyName.js"
+    "backfill:company": "node ./scripts/backfillCompanyName.js",
+    "lint": "eslint . --ext js --max-warnings 0"
   },
   "author": "",
   "license": "ISC",
@@ -23,5 +24,8 @@
     "mongoose": "^8.0.3",
     "nodemon": "^3.1.0",
     "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0"
   }
 }
